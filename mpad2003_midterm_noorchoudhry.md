@@ -74,7 +74,7 @@ To include a screen capture, use the sample code below. Your images should be sa
 
 
 ![](import-screen-capture.png)<br>
-*Figure 1: The "Import file" prompt on Google Sheets.*
+*Figure 1: The "Import file" prompt on Google Sheets with the correct settings selected.*
 
 **Here are examples of functions and lines of code put in grey boxes:**
 
