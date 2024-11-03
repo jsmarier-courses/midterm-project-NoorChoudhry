@@ -32,13 +32,48 @@ For the original dataset, [click here](https://open.ottawa.ca/documents/65fe42e2
 
 **Or copy and paste these links into your browser:**
 
-Original dataset:
-https://open.ottawa.ca/documents/65fe42e2502d442b8a774fd3d954cac5/about
+Original dataset: https://open.ottawa.ca/documents/65fe42e2502d442b8a774fd3d954cac5/about 
 
 CSV file:
 https://raw.githubusercontent.com/jsmarier/course-
 
 ## 2. Getting Data
+
+To import data into Google Sheets, download the CSV file using Professor Jean-Sébastien Marier's GitHub link to the CSV file ([click here](https://raw.githubusercontent.com/jsmarier/course-datasets/refs/heads/main/ottawa-311-service-requests-august-2024.csv)). I used the drag-and-drop feature on my MacBook to upload the CSV file onto Google Sheets. Alternatively, you can go through the following steps: select **File > Import > Upload > Select a file from your device**. In the import settings, select **Replace current sheet** for "Import location" and use a **comma** as the "Separator type" to get a proper column display. The dataset consists of 10 columns and approximately 29,000 rows (28,539 to be exact).
+
+![](importfile-example.png)<br>
+*Figure 1: The "Import file" prompt on Google Sheets.*
+
+[Click here for my public link to the dataset on Google Sheets.](https://docs.google.com/spreadsheets/d/18Z9AKnIkgHHDtc3c6YVl4Flks-yFMDA5r0NuCJRX324/edit?usp=sharing)
+
+Or copy & paste this link into your browser: https://docs.google.com/spreadsheets/d/18Z9AKnIkgHHDtc3c6YVl4Flks-yFMDA5r0NuCJRX324/edit?usp=sharing
+
+
+![](googlesheets-screencapture.png)<br>
+*Figure 2: Screen capture of my dataset in Google Sheets.*
+
+### Observations of Key Columns
+
+- **Status** (column B): A nominal (categorical) variable that shows the status of each request (options include: Active, Resolved, and Cancelled).
+- **Opened Date and Closed Date** (columns E & F): These two are fields that can help analyze the duration of each request.
+- **Ward** (column J): A discrete numerical variable that helps with th geographic analysis of requests across the city.
+
+### General Observations
+
+Some columns, such as **Address**, **Latitude**, and **Longitude**, have missing values, which could affect location-based analyses. The data appears clean in terms of categorical organization, but with so many rows, readability can be challenging. The dataset is well-organized by columns, but given the volume of entries, it will be difficult to analyze on its own.
+
+### Hypothesis/Question
+
+A question that comes to mind for this data involves exploring a possible correlation between **ward** and **service efficiency**. Specifically, I am interested in analyzing the relationship between ward location and response times for specific service requests, like road maintenance or health inspections, based on the **status**, **quantity**, and **type** of requests.
+
+
+<br>
+<br><br>
+<br><br>
+<br>
+just want to keep this informoaton, but separated incase i need it
+<br>
+<br>
 
 Use two hashtag symbols (`##`) to create a level 2 heading like this one.
 
