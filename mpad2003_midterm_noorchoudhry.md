@@ -67,20 +67,13 @@ Some columns, such as **Address**, **Latitude**, and **Longitude**, have missing
 A question that comes to mind for this data involves exploring a possible correlation between **ward** and **service efficiency**. Specifically, I am interested in analyzing the relationship between ward location and response times for specific service requests, like road maintenance or health inspections, based on the **status**, **quantity**, and **type** of requests.
 
 
-<br>
-<br><br>
-<br><br>
-<br>
-just want to keep this informoaton, but separated incase i need it
-<br>
-<br>
 
 Use two hashtag symbols (`##`) to create a level 2 heading like this one.
 
 To include a screen capture, use the sample code below. Your images should be saved in the same folder as your `.md` file.
 
 
-![](importfile-example.png)<br>
+![](import-screen-capture.png)<br>
 *Figure 1: The "Import file" prompt on Google Sheets.*
 
 **Here are examples of functions and lines of code put in grey boxes:**
