@@ -92,45 +92,45 @@ This also shows how to create an ordered list. Simply put `1.` before each item.
 ### 3.1. VIMO Analysis
 
 
-A VIMO analysis plays an essential role in understanding data. The acronym stands for **Valid**, **Invalid**, **Missing**, and **Outliers**. Each category helps identify the quality and integrity of the data being analyzed. By categorizing data this way, we can make informed decisions on how to clean and interpret datasets effectively. As noted by Statistics Canada, "Accuracy is one of the six dimensions of Data Quality used at Statistics Canada. Accurate data correctly describe the phenomena they were designed to measure or represent." (Government of Canada, Statistics Canada, 2022)
+A VIMO analysis has an important role in understanding data. The acronym stands for **Valid, Invalid, Missing, Outliers**. Each of these categories helps in identifying the quality and integrity of the data being analyzed. By categorizing data this way, we can make informed decisions on how to clean and interpret their datasets effectively. The Government of Canada explains the importance of data accuracy in the following quote. "Accuracy is one of the six dimensions of Data Quality used at Statistics Canada. Accurate data correctly describe the phenomena they were designed to measure or represent." (Government of Canada, Statistics Canada, 2022)
+
 
 This VIMO analysis will focus on three columns: **Status** (Column B), **Opened Date** (Column E), and **Closed Date** (Column F).
----
+
 #### 1. Validity
 
-- **Status**: The **Status** column should contain only three values: *Active*, *Resolved*, and *Cancelled*. These statuses indicate the progress or completion of service requests and must match each record's actual state.
-  - *Observation*: All rows contain one of the three valid statuses, apart from the column title, confirming the data's validity.
+- **Status**: The **Status** column should contain only three values: *Active*, *Resolved*, and *Cancelled*. These statuses show the progress or completion of service requests and must match each record's actual state.
+  - *Observation*: All rows have one of the three valid statuses, besides the column title, confirming the data's validity.
 
-- **Opened Date and Closed Date**: These fields indicate when a request was submitted and closed. Dates must be in the correct format and in chronological order, meaning the **Closed Date** cannot be earlier than the **Opened Date**.
+- **Opened Date and Closed Date**: These fields show when a request was submitted and closed. Dates must be in the correct format (e.g., YYYY-MM-DD) and in chronological order, meaning the **Closed Date** can't be earlier than the **Opened Date**.
   - *Condition*: A closed date should only be missing if the status is marked *Active*.
 
----
+
 #### 2. Invalidity
 
-- **Status**: If **Status** contains any entries beyond the expected *Active*, *Resolved*, or *Cancelled* categories, they are considered invalid.
-  - *Example*: Entries such as "In Progress" or "Done" would be invalid since they don't match the acceptable options.
+- **Status**: If **Status** has any entries that are notin the *Active*, *Resolved*, or *Cancelled* categories, they are considered invalid.
+  - *Example*: Entries that would say "In Progress" or "Done" would be invalid since they don't match the acceptable options.
   - *Observation*: All entries in this column are valid.
 
-- **Opened Date and Closed Date**: Dates that don’t conform to a standard format (e.g., YYYY-MM-DD) or instances where **Closed Date** is earlier than **Opened Date** are invalid.
-  - *Examples*: A **Closed Date** that precedes the **Opened Date**, or a date format not following YYYY-MM-DD.
-  - *Observation*: The data appears satisfactory with no such invalid entries.
+- **Opened Date and Closed Date**: Like I wrote above for validity, entries that dont match the standard format (e.g., YYYY-MM-DD) or places where **Closed Date** is earlier than **Opened Date** are invalid.
+  - *Observation*: The data appears fine with no invalid entries.
 
----
+
 #### 3. Missing Values
 
 - **Status**: Missing values could affect the summary of request outcomes, as each request should have a clear status.
   - *Observation*: All values in the status column are accounted for.
 
 - **Opened Date and Closed Date**: Missing **Opened Dates** hinder tracking the start of service requests, and a "Resolved" request missing a **Closed Date** raises concerns about data accuracy and the timing of resolution.
-  - *Observation*: All Opened Date values are filled, and while some Closed Date entries are marked "\N" (likely an active status), this aligns with the dataset's structure.
+  - *Observation*: All Opened Date values are accounted for, and while some Closed Date entries are marked "\N", those most ikely have an active status.
 
----
+
 #### 4. Outliers
 
-- **Status**: Since **Status** is categorical, it typically lacks outliers. However, if there are significantly fewer "Cancelled" statuses compared to "Resolved" or "Active," this imbalance could be worth exploring.
+- **Status**: Since **Status** is categorical, it won't usually have outliers. However, if there are significantly fewer "Cancelled" statuses compared to "Resolved" or "Active," this imbalance could be worth exploring.
 
 - **Opened Date and Closed Date**: Long gaps between **Opened Date** and **Closed Date** may suggest service delays or data entry errors, while same-day open and closing might also be unusual.
-  - *Observation*: Review of these intervals could reveal unusual delays or patterns worth further investigation.
+  - *Observation*: Reviewing these intervals could reveal unusual delays or patterns worth looking into.
 
 ---
 ### 3.2. Cleaning Data
@@ -177,22 +177,29 @@ Steps:
 I now have a distinct English and French description columns, which makes it easier to do text-based analysis on the data.
 
 ![](clean-data.png)<br>
-*Figure 3: This is a screenshot of the data post-clean-up*
+*Figure 3: This is a screenshot of the google sheet data post-clean-up*
 
 ---
 ### 3.3. Exploratory Data Analysis (EDA)
 
-Insert text here.
+I selected **Ward** and **Service Request ID** as the key variables to investigate whether the frequency of service requests differs by area. This insight could help reveal geographic trends in city services and identify areas with higher or lower service demands.
 
-**This section should include a screen capture of your pivot table, like so:**
+![](ward-request-counta.png)<br>
+*Figure 4: This pivot table shows each ward and the amount of service requests there are, as well as a percentage*
 
-![](pivot-table-screen-capture.png)<br>
-*Figure 2: This pivot table shows...*
+![](serviceidcounta-vs-ward-chart.png)<br>
+*Figure 3: This exploratory chart shows the ward number vs. the amount of service request ID's*
 
-**This section should also include a screen capture of your exploratory chart, like so:**
+#### Key Findings
+The pivot table shows which wards submit the most requests. For example, **Wards 12 and 14** have the highest request counts, it could mean that these areas need more attention or resources.
 
-![](chart-screen-capture.png)<br>
-*Figure 3: This exploratory chart shows...*
+#### Insights and Next Steps
+The high number of requests in some wards may indicate specific needs, so services should allocate resources in those areas to help reduce the numbers.
+Further analysis could identify which types of requests are more common in high-request wards, clarifying service demand patterns.
+
+This EDA provides a basic understanding of service distribution in the city and identifies areas where management may need to allocate more resources.
+
+
 
 ## 4. Potential Story
 
