@@ -1,10 +1,10 @@
-**Wed Oct 23**<br>
+**November 4 2024**<br>
 **MPAD2003A Introductory Data Storytelling**<br>
 **Noor Choudhry**<br>
 **Presented to Jean-Sébastien Marier**<br>
 
 # Midterm Project: Exploratory Data Analysis (EDA)
-
+<!---
 ## Foreword
 
 For this assignment, you must extract data from a dataset provided by the instructor. You must then clean and analyze the data, create exploratory charts/visualizations, and find a potential story idea. Your assignment must clearly detail your process. You are expected to write about 1500-2000 words, and to include several screen captures showing the different steps you went through. Your assignment must be written with the Markdown format and submitted on GitHub Classroom.
@@ -20,7 +20,25 @@ Did you notice how to create a hyperlink? In Markdown, we put the clickable text
 
 And to create an unordered list, we simply put a star (`*`) before each item.
 
+Use two hashtag symbols (`##`) to create a level 2 heading like this one.
 
+To include a screen capture, use the sample code below. Your images should be saved in the same folder as your `.md` file.
+
+
+![](import-screen-capture.png)<br>
+*Figure 1: The "Import file" prompt on Google Sheets with the correct settings selected.*
+
+**Here are examples of functions and lines of code put in grey boxes:**
+
+1. If you name a function, put it between "angled" quotation marks like this: `IMPORTHTML`.
+1. If you want to include the entire line of code, do the same thing, albeit with your entire code: `=IMPORTHTML("https://en.wikipedia.org/wiki/China"; "table", 5)`.
+1. Alternatively, you can put your code in an independent box using the template below:
+
+``` r
+=IMPORTHTML("https://en.wikipedia.org/wiki/China"; "table", 5)
+```
+This also shows how to create an ordered list. Simply put `1.` before each item.
+-->
 
 ## 1. Introduction
 
@@ -64,28 +82,9 @@ Some columns, such as **Address**, **Latitude**, and **Longitude**, have missing
 
 ### Hypothesis/Question
 
-A question that comes to mind for this data involves exploring a possible correlation between **ward** and **service efficiency**. Specifically, I am interested in analyzing the relationship between ward location and response times for specific service requests, like road maintenance or health inspections, based on the **status**, **quantity**, and **type** of requests.
+A question that comes to mind for this data involves "what is the possible correlation between **ward** and **service requests**." Specifically, I am interested in looking into the relationship between ward and **status, quantity**, and **type** of requests. Understanding this correlation could reveal patterns that could lead to a better resource allocation and improve community services. By analyzing the data across different wards, we may identify areas that require more attention or different service strategies.
 
 
-
-Use two hashtag symbols (`##`) to create a level 2 heading like this one.
-
-To include a screen capture, use the sample code below. Your images should be saved in the same folder as your `.md` file.
-
-
-![](import-screen-capture.png)<br>
-*Figure 1: The "Import file" prompt on Google Sheets with the correct settings selected.*
-
-**Here are examples of functions and lines of code put in grey boxes:**
-
-1. If you name a function, put it between "angled" quotation marks like this: `IMPORTHTML`.
-1. If you want to include the entire line of code, do the same thing, albeit with your entire code: `=IMPORTHTML("https://en.wikipedia.org/wiki/China"; "table", 5)`.
-1. Alternatively, you can put your code in an independent box using the template below:
-
-``` r
-=IMPORTHTML("https://en.wikipedia.org/wiki/China"; "table", 5)
-```
-This also shows how to create an ordered list. Simply put `1.` before each item.
 
 ## 3. Understanding Data
 
@@ -171,7 +170,6 @@ Steps:
 1. In a new column (I used column L), I entered the following formula in the space **L2**:
    ```markdown
    =SPLIT(D2, "|")
-
 2. I then selected the box and I copied the formula down the column to apply it to all rows.
 
 I now have a distinct English and French description columns, which makes it easier to do text-based analysis on the data.
@@ -188,26 +186,31 @@ I selected **Ward** and **Service Request ID** as the key variables to investiga
 *Figure 4: This pivot table shows each ward and the amount of service requests there are, as well as a percentage*
 
 ![](serviceidcounta-vs-ward-chart.png)<br>
-*Figure 3: This exploratory chart shows the ward number vs. the amount of service request ID's*
+*Figure 5: This exploratory chart shows the ward number vs. the amount of service request ID's*
 
 #### Key Findings
 The pivot table shows which wards submit the most requests. For example, **Wards 12 and 14** have the highest request counts, it could mean that these areas need more attention or resources.
 
 #### Insights and Next Steps
 The high number of requests in some wards may indicate specific needs, so services should allocate resources in those areas to help reduce the numbers.
-Further analysis could identify which types of requests are more common in high-request wards, clarifying service demand patterns.
-
+Further analysis could identify which types of requests are more common in high-request wards, clarifying service demand patterns. 
 This EDA provides a basic understanding of service distribution in the city and identifies areas where management may need to allocate more resources.
+
+I would like to learn how to create a chart or pivot table (whichever format is more suitable) that effectively illustrates the different **types of requests** coming from each ward.
 
 
 
 ## 4. Potential Story
 
-Insert text here.
+This analysis can reveal the story of how city service requests reflect varying needs across Ottawa's wards. Analyzing which wards make the most service requests can reveal connections between population density, community resources, and service needs. Through this story, we can explore questions like: "Are there specific services that are more frequently requested in certain wards?" and "how can we lower service requests in high-request areas?" Additional data on ward population, median income, and other demographics would help illustrate this story. This could help us analyze whether socioeconomic factors contribute to higher service requests.
+I can think of two interviewees for this story. One, City of Ottawa officials, for insights on current resource allocation and service response strategies across different wards. And two, Community leaders from high-request wards, for their perspective on local needs and feedback from residents.
+
+To learn more about these topics, I would look for news articles on service delivery and public infrastructure needs in Ottawa. Studies on urban demographics and service demand (e.g., reports from Ottawa’s Planning, Real Estate, and Economic Development Department). Consider looking into government publications on city services and funding allocations for different wards, and compare those findings with interviews with Ottawa officials.
+
 
 ## 5. Conclusion
 
-Insert text here.
+Throughout this project, I aimed to analyze the City of Ottawa's service requests dataset from August 2024 to uncover patterns in community needs across wards. My process included importing, cleaning, and performing an exploratory data analysis (EDA) to examine trends. This was not without challenges; handling a large dataset in Google Sheets presented limitations in both processing speed and complexity, while ensuring data integrity required thorough checks for validity and consistency. This time, I couldn't identify inconsistencies in the data as I usually do (physically looking at the dataset), because there was too much information to process. The most interesting part of this project was learning about service patterns across Ottawa’s wards. I was completely unaware of how service requests are collected in Ottawa and the volume of requests collected in just one month. I see the need to improve my analytical skills, particularly in statistical methods, and I want to explore more advanced tools for future projects. Adding variables like population density would improve the analysis and better explain service needs in various wards. This project improved my data storytelling skills and emphasized the significance of clean data and structured analysis for producing meaningful results.
 
 ## 6. References
 
@@ -215,3 +218,13 @@ Include a list of your references here. Please follow [APA guidelines for refere
 
 
 - Government of Canada, Statistics Canada. (2022, May 11). Data Accuracy and Validation: Methods to ensure the quality of data. Retrieved from [https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020008](https://www.statcan.gc.ca/en/wtc/data-literacy/catalogue/892000062020008 )
+
+- I did try to use chatGPT to help formatting my VIMO analysis, because of the point form list format I was going for but it slightly changed my words which I caught (thankfully) and made those corrections in my 10th commit. thankfully I wrote my rough draft in a [google doc](https://docs.google.com/document/d/1xwY8FLaS1buSC6-B8Yj_dgrjjJ4vgUo6FsffeNEyA7M/edit?usp=sharing) so I just had to copy and paste my original text. [https://docs.google.com/document/d/1xwY8FLaS1buSC6-B8Yj_dgrjjJ4vgUo6FsffeNEyA7M/edit?usp=sharing](https://docs.google.com/document/d/1xwY8FLaS1buSC6-B8Yj_dgrjjJ4vgUo6FsffeNEyA7M/edit?usp=sharing)
+
+- Also I'd like to note I faced some difficulty where my commits were not pushing until I did troubleshooting and typed a command in the terminal that a man named Chris from [Stack Overflow](https://stackoverflow.com/questions/62753648/rpc-failed-http-400-curl-22-the-requested-url-returned-error-400-bad-request) suggested:
+``` r
+ git config http.postBuffer 524288000
+
+git pull && git push
+``` 
+[https://stackoverflow.com/questions/62753648/rpc-failed-http-400-curl-22-the-requested-url-returned-error-400-bad-request](https://stackoverflow.com/questions/62753648/rpc-failed-http-400-curl-22-the-requested-url-returned-error-400-bad-request)
